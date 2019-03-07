@@ -30,10 +30,11 @@ public class Member extends HttpServlet {
        out.println("  <title>会员登入成功</title>");
        out.println("</head>");
        out.println("<body>");
-       out.println("<h1>会员 " + username + " 你好</h1>");
+       //out.println("<h1>会员 " + username + " 你好</h1>");
        out.println("</body>");
-       out.println("<img src='caterpillar.jpg'　alt='Gossip 微博‘/><br><br>");
-       out.println("<a href='logout.do?username="+username+"'>注销"+username+"</a>");
+       out.println("<img src='caterpillar.png'　alt='Gossip 微博'/>");
+       out.println("<br><br>");
+       out.println("<a href='logout.do?username=" + username + "'>登出 " + username + "</a>");//之前登出显示不出来，原因为上面微博后的小符号，用的中文符号，导致这一句无效
        out.println("</div>");
        out.println("<form method='post' action='message.do'>");
        out.println("分享新鲜事...<br>");
@@ -60,7 +61,7 @@ public class Member extends HttpServlet {
            out.println(username+"<br>");
            out.println(messages.get(date)+"<br>");
            out.println(dateFormat.format(date));
-           out.println("a href='delete.do?message=" +date.getTime()+"'>删除</a>");
+           out.println("<a href='delete.do?message=" + date.getTime() + "'>删除</a>");
            out.println("<hr></td></tr>");
        }
        out.println("</html>");

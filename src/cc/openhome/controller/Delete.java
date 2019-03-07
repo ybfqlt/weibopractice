@@ -13,7 +13,7 @@ public class Delete extends HttpServlet {
     private final String USERS = "/home/ltt/IdeaProjects/Gossip/users";
     private final String LOGIN_VIEW="index.html";
     private final String SUCCESS_VIEW="member.view";
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(request.getSession().getAttribute("login")==null){
             response.sendRedirect(LOGIN_VIEW);
             return;
